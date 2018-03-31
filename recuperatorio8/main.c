@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include<string.h>
 
 int main()
 {
@@ -7,8 +8,7 @@ int main()
     int cantidadDePaginas;
     int cantVentas;
     int tema;
-    int respuesta=1;
-    int respuesta1;
+    char respuesta1;
     int cantPagPar=0;
     int cantPagImp=0;
     int sinVentas=0;
@@ -17,10 +17,11 @@ int main()
     float Promedio;
     int contador=0;
 
-    while(respuesta==1)
+    while(respuesta1=='s'||contador==0)
     {
+
         printf("Ingrese nombre del libro: ");
-        gets(nombre);
+        gets( nombre);
         printf("\nCantidad de paginas: ");
         scanf("%d",&cantidadDePaginas);
         printf("\nCantidad de ventas: ");
@@ -44,25 +45,18 @@ int main()
         {
             sumaPag=sumaPag+cantidadDePaginas;
         }
-
-        printf("Desea continuar presione 1.s/2.n");
-        scanf("%d", &respuesta1);
-        while(respuesta1!=1&&respuesta1!=2)
+        contador++;
+        printf("Desea continuar presione [s/n]");
+        scanf(" %c", &respuesta1);
+        while(respuesta1!='s'&&respuesta1!='n'  )
         {
             printf("ERROR\nPara continuar 1\nPara salir 2\n");
-            scanf("%d", &respuesta1);
+            scanf(" %c", &respuesta1);
         }
 
+        getchar();
 
-        contador++;
-        if(respuesta1==1)
-        {
 
-        }
-        else
-        {
-            respuesta++;
-        }
     }
     Promedio=(float)sumaVentas/contador;
     printf("\nLa Cantidad de libros con un total de paginas pares es: %d",cantPagPar);

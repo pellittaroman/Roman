@@ -5,19 +5,18 @@ int main()
 {
     int nota;
     int edad;
-    int sex;
     char sexo;
     int flag=0;
     int sumaDeNotas=0;
     float promedio;
     int notaMasBaja;
-    char sexoNotaBaja;
+    int sexoNotaBaja;
     int cantidadVarones=0;
     int notaMujer;
     int edadMujer;
     int masJoven;
     int masJovenNota;
-    char masJovenSexo;
+    int masJovenSexo;
     int contadorMujer=0;
     int flagM=0;
     int i;
@@ -25,47 +24,42 @@ int main()
     {
 
 
-    printf("Ingrese nota:\n");
+    printf("Ingrese nota: ");
     scanf("%d", &nota);
     while(nota<0 || nota>10)
     {
-        printf("ERROR\nIngrese nota:\n");
+        printf("ERROR\nIngrese nota: ");
         scanf("%d",&nota);
     }
 
-    printf("Ingrese edad:\n");
+    printf("Ingrese edad: ");
     scanf("%d",&edad);
     while(edad<6)
     {
-        printf("ERROR\nIngrese edad:\n");
+        printf("ERROR\nIngrese edad: ");
         scanf("%d", &edad);
 
     }
-    printf("Ingrese sexo:\n1.masculino\n2.femenino\n");
-    scanf("%d", &sex);
 
-
-     while(sex<=0||sex>2)
+    printf("Ingrese sexo 'm' o 'f': ");
+    scanf(" %c", &sexo);
+    while(sexo!='m'&& sexo!='f')
     {
-        printf("Ingrese sexo:\n1.masculino\n2.femenino\n");
-        scanf("%d", &sex);
-
+        printf("ERROR");
+        printf("Ingrese sexo 'm' o 'f'\n");
+        scanf(" %c", &sexo);
     }
+
+
+
     sumaDeNotas=sumaDeNotas+nota;
-    if(sex==1)
-    {
-        sexo='m';
-    }
-    else if(sex==2)
-    {
-        sexo='f';
-    }
+
     if (flag==0 || nota<notaMasBaja)
     {
         notaMasBaja=nota;
         sexoNotaBaja=sexo;
     }
-    if (sex==1 && nota>=6)
+    if (sexo== 'm' && nota>=6)
     {
         cantidadVarones++;
     }
@@ -76,13 +70,13 @@ int main()
         masJovenSexo=sexo;
         flag=1;
     }
-    if(sex==2 && flagM==0)
+    if(sexo=='f' && flagM==0)
     {
         notaMujer=nota;
         edadMujer=edad;
         flagM=1;
     }
-    if(sex==2)
+    if(sexo=='f')
     {
         contadorMujer++;
     }

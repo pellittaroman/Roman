@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 
 int main()
 {
@@ -11,28 +12,29 @@ int main()
     int minimo;
     int temp;
     int cantBajoCero=0;
+    char nombrePesado[100];
     int contador=0;
-    int seguir=1;
+    char seguir='s';
     int tempPar=0;
     int pesoMax;
     int tempMax;
 
-    while(seguir==1)
+    while(seguir=='s')
     {
-        printf("Ingrese nombre del animal:\n");
+        printf("Ingrese nombre del animal: ");
         gets(nombre);
-        printf("Ingrese peso:\n");
+        printf("Ingrese peso: ");
         scanf("%d",&peso);
         while(peso<1||peso>1000)
         {
-            printf("ERROR\nIngrese peso:\n");
+            printf("ERROR\nIngrese peso: ");
             scanf("%d",&peso);
         }
-        printf("Ingrese temperatura del habitat:\n");
+        printf("Ingrese temperatura del habitat: ");
         scanf("%d",&temp);
         while(temp<-30||temp>30)
         {
-            printf("ERRORIngrese temperatura del habitat:\n");
+            printf("ERROR\nIngrese temperatura del habitat: ");
             scanf("%d",&temp);
         }
         if(temp!=0&&temp%2==0)
@@ -54,20 +56,25 @@ int main()
         if(contador==0||peso>pesoMax)
         {
             pesoMax=peso;
-
             tempMax=temp;
+            strcpy(nombrePesado,nombre);
+
+
+
         }
         sumaPesos=sumaPesos+peso;
         contador++;
-        printf("Ingrese\n1.para continuar\n2.para terminar\n");
-        scanf("%d",&seguir);
+
+        printf("Desea continuar [s/n]\n");
+        scanf(" %c",&seguir);
+        getchar();
 
     }
     promedio=(float)sumaPesos/contador;
     printf("La cantidad de temperaturas par son %d\n",tempPar);
-    printf("El nombre del animal mas pesado es... y la temperatura de habitat es %d\n",tempMax);
+    printf("El nombre del animal mas pesado es el %s y la temperatura de habitat es %d\n",nombrePesado,tempMax);
     printf("La cantidad de animales que viven a temperaturas bajo cero es: %d\n",cantBajoCero);
     printf("El promedio de pesos es de: %.2f\n",promedio);
-    printf("El peso maximo de los animales  que viven a temperaturas bajo cero es %d\nel minimo es %d\n",maximo,minimo);
+    printf("El peso maximo de los animales  que viven a temperaturas bajo cero es %dkg\nel minimo es %dkg\n",maximo,minimo);
     return 0;
 }

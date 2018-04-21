@@ -1,0 +1,11 @@
+# depslib dependency file v1.0
+1524272507 source:c:\users\alumno\desktop\struct\main.c
+	<stdio.h>
+	<stdlib.h>
+	"libreria.h"
+	"libreria.c"
+
+1524272322 c:\users\alumno\desktop\struct\libreria.h
+
+1524272570 c:\users\alumno\desktop\struct\libreria.c
+

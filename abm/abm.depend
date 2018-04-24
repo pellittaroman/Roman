@@ -1,0 +1,13 @@
+# depslib dependency file v1.0
+1524531997 source:c:\users\alumno\desktop\abm\main.c
+	<stdio.h>
+	<stdlib.h>
+	"../Roman-master/struct/libreria.h"
+	"../Roman-master/struct/libreria.c"
+
+1524525558 source:c:\users\alumno\desktop\roman-master\struct\libreria.c
+
+1524530777 c:\users\alumno\desktop\roman-master\struct\libreria.h
+
+1524525558 c:\users\alumno\desktop\roman-master\struct\libreria.c
+

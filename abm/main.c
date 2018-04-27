@@ -1,11 +1,9 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include "../Roman-master/struct/libreria.h"
-#include "../Roman-master/struct/libreria.c"
-
+#include "libreria.h"
 #define TAM 50
 
-int menu();
+
 int main()
 {
     int salir=0;
@@ -21,11 +19,11 @@ int main()
             system("pause");
             break;
         case 2:
-            printf("Baja\n");
+            bajaEmpleado(gente,TAM);
             system("pause");
             break;
         case 3:
-            printf("Modificar\n");
+            modificarEmpleado(gente,TAM);
             system("pause");
             break;
         case 4:
@@ -136,13 +134,13 @@ void altaEmpleado(eEmpleado vec[], int tam)
             eEmpleado nuevoEmpleado;
             nuevoEmpleado.legajo=legajo;
             nuevoEmpleado.isEmpty=0;
-            printf("Ingrese nombre ");
+            printf("Ingrese nombre: ");
             fflush(stdin);
             gets(nuevoEmpleado.nombre);
-            printf("Ingrese sexo ");
+            printf("Ingrese sexo: ");
             fflush(stdin);
             scanf("%c",&nuevoEmpleado.sexo);
-            printf("Ingrese sueldo ");
+            printf("Ingrese sueldo: ");
             scanf("%f",&nuevoEmpleado.sueldo);
             printf("Ingrese dia de ingreso: ");
             scanf("%d", &nuevoEmpleado.fecha.dia   );
@@ -199,4 +197,58 @@ int buscarLibre(eEmpleado vec [],int tam)
         }
     }
     return indice;
+}
+void bajaEmpleado(eEmpleado vec[],int tam)
+{
+
+    int legajo;
+    int esta;
+    char confirma;
+    printf("Ingrese legajo: ");
+    scanf("%d", &legajo);
+    esta=buscarEmpleado(vec,tam,legajo);
+    if (esta==-1)
+    {
+        printf("No se encontro legajo");
+    }
+    else
+    {
+            mostrarEmp1(vec,esta);
+    }
+    printf("Confirma operacion s/n: ");
+    scanf(" %c",&confirma);
+    if (confirma=='s')
+    {
+        vec[esta].isEmpty=1;
+        printf("Baja exitosa\n");
+    }
+}
+void modificarEmpleado(eEmpleado vec[],int tam)
+{
+
+    int legajo;
+    int esta;
+    char confirma;
+    float nuevoSueldo;
+    printf("Ingrese legajo: ");
+    scanf("%d", &legajo);
+    esta=buscarEmpleado(vec,tam,legajo);
+    if (esta==-1)
+    {
+        printf("No se encontro legajo");
+    }
+    else
+    {
+            mostrarEmp1(vec,esta);
+    }
+    printf("Confirma operacion s/n: ");
+    scanf(" %c",&confirma);
+    if (confirma=='s')
+    {
+        printf("Ingrese nuevo sueldo: ");
+        scanf("%f",&nuevoSueldo);
+        vec[esta].sueldo=nuevoSueldo;
+        printf("Modificacion exitosa!\n");
+
+    }
 }

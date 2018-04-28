@@ -1,6 +1,10 @@
 #ifndef LIBRERIA_H_INCLUDED
 #define LIBRERIA_H_INCLUDED
-
+typedef struct
+{
+int id;
+char nombre[20];
+}eSector;
 typedef struct
 {
     int dia;
@@ -14,18 +18,27 @@ typedef struct
     char sexo;
     float sueldo;
     eFecha fecha;
+    int idSector;
     int isEmpty;
 }eEmpleado;
 
-void mostrarEmp(eEmpleado[],int tam);
+void mostrarEmp(eEmpleado[],eSector [],int tam);
 
 eEmpleado cargardatos();
 
 int menu();
 
-void bajaEmpleado(eEmpleado [],int);
+void bajaEmpleado(eEmpleado [],eSector [],int);
 
-void modificarEmpleado(eEmpleado[],int);
+void modificarEmpleado(eEmpleado[],eSector [],int);
+
+int pedirSector();
+
+int buscarLibre(eEmpleado vec [],int tam);
+
+eSector mostrarSector(eSector [],int );
+
+//void ordenarEmpleados(eEmpleado[],int);
 
 
 #endif // LIBRERIA_H_INCLUDED

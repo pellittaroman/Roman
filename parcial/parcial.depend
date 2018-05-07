@@ -1,0 +1,20 @@
+# depslib dependency file v1.0
+1525677781 source:c:\users\u505313\desktop\facultad\c\parcial\main.c
+	<stdio.h>
+	<stdlib.h>
+	"libreria.h"
+	"informes.c"
+
+1525677824 source:c:\users\u505313\desktop\facultad\c\parcial\funciones.c
+	<stdio.h>
+	<stdlib.h>
+	"libreria.h"
+
+1525677781 source:c:\users\u505313\desktop\facultad\c\parcial\informes.c
+	"libreria.h"
+
+1525677779 c:\users\u505313\desktop\facultad\c\parcial\libreria.h
+
+1525677781 c:\users\u505313\desktop\facultad\c\parcial\informes.c
+	"libreria.h"
+

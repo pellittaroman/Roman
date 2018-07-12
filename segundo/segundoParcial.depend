@@ -1,0 +1,23 @@
+# depslib dependency file v1.0
+1531106528 source:c:\users\u505313\desktop\facultad\c\segundoparcial\arraylist.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"ArrayList.h"
+
+1531105627 c:\users\u505313\desktop\facultad\c\segundoparcial\arraylist.h
+
+1531256022 source:c:\users\u505313\desktop\facultad\c\segundoparcial\main.c
+	<stdio.h>
+	<stdlib.h>
+	"ArrayList.h"
+	"empleados.h"
+
+1531255919 source:c:\users\u505313\desktop\facultad\c\segundoparcial\empleados.c
+	<stdio.h>
+	<stdlib.h>
+	"ArrayList.h"
+	"empleados.h"
+
+1531106479 c:\users\u505313\desktop\facultad\c\segundoparcial\empleados.h
+

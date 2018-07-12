@@ -7,37 +7,36 @@ int main()
     ArrayList* parcial;
     eEmpleado* aux=newEmpleado();
     parcial=al_newArrayList();
-    int i,j,ok;
+    ArrayList* prueba;
+    prueba=al_newArrayList();
+    int i,j,ok,mapeo;
 
     parserEmpleados(parcial);
     int tam=parcial->len();
 
 
-    for(i=0;i<tam;i++)
-    {
-        aux=parcial->get(parcial,i);
-        printEmpleado(aux);
-    }
+    printEmpleadoAll(parcial);
     system("pause");
     system("cls");
 
     j=al_sort(parcial,orden,0);
 
 
-    for(i=0;i<tam;i++)
-    {
-        aux=parcial->get(parcial,i);
-        printEmpleado(aux);
-    }
+    printEmpleadoAll(parcial);
     system("pause");
     system("cls");
-    map(parcial,calcularSalary);
-
-    for(i=0;i<tam;i++)
+    mapeo=map(parcial,calcularSalary);
+    if(mapeo!=0)
     {
-        aux=parcial->get(parcial,i);
-        printEmpleado(aux);
+        printf("ERROR");
     }
+    prueba=filtrar(parcial,filtrado);
+    if(prueba!=NULL)
+    {
+        parcial=prueba;
+        printEmpleadoAll(parcial);
+    }
+
 
 
     ok=guardarArchivo(parcial,"fin3.csv");

@@ -21,3 +21,25 @@
 
 1531106479 c:\users\u505313\desktop\facultad\c\segundoparcial\empleados.h
 
+1531434316 source:c:\users\alumno\desktop\segundo\arraylist.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"ArrayList.h"
+
+1531413212 c:\users\alumno\desktop\segundo\arraylist.h
+
+1531434316 source:c:\users\alumno\desktop\segundo\empleados.c
+	<stdio.h>
+	<stdlib.h>
+	"ArrayList.h"
+	"empleados.h"
+
+1531434450 c:\users\alumno\desktop\segundo\empleados.h
+
+1531433668 source:c:\users\alumno\desktop\segundo\main.c
+	<stdio.h>
+	<stdlib.h>
+	"ArrayList.h"
+	"empleados.h"
+

@@ -630,4 +630,26 @@ int map (ArrayList* this, int(*pFunc)(void*))
         }
         return retorno;
 }
+ArrayList* filtrar(ArrayList* empleado, int(*pFunc) (void*) )
+{
+    ArrayList* aux= al_newArrayList();
+    int i,ok,tam=empleado->len(empleado);
 
+
+
+    for(i=0;i<tam;i++)
+    {
+
+
+        if(pFunc(al_get(empleado,i))==0)
+        {
+           al_add(aux,al_get(empleado,i));
+        }
+    }
+    if(aux!=NULL)
+    {
+        empleado=aux;
+    }
+
+
+}

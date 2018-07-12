@@ -10,6 +10,7 @@ typedef struct
 }eEmpleado;
 int orden(void* ,void* );
 int calcularSalary(void* );
+int filtrado (void* );
 
 
 #endif // EMPLEADOS_H_INCLUDED

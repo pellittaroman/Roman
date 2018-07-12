@@ -291,5 +291,25 @@ void printEmpleado(eEmpleado* empleado)
     {
         printf("No se pudo leer el empleado\n");
     }
+}void printEmpleadoAll(ArrayList* empleado)
+{
+    int i,tam=empleado->len(empleado);
+    eEmpleado* aux;
+    for(i=0;i<tam;i++)
+    {
+        aux=newEmpleado();
+        aux=empleado->get(empleado,i);
+        printEmpleado(aux);
+    }
+}
+int filtrado (void* a)
+{   int retorno=1;
+
+    if(((eEmpleado*)a)->horas>120)
+    {
+        retorno=0;
+    }
+
+    return retorno;
 }
 

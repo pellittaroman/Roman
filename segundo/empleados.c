@@ -219,18 +219,18 @@ int calcularSalary(void* empleado)
         printf("ERROR");
         exit(1);
     }
-    if(((eEmpleado*)empleado)->horas>79&&((eEmpleado*)empleado)->horas<120)
+    if(hora>79&&hora<120)
     {
         sueldo=hora*180;
         retorno=0;
     }
-    if(((eEmpleado*)empleado)->horas>=120&&((eEmpleado*)empleado)->horas<160)
+    if(hora>=120&& hora<160)
     {
         hora=hora-120;
         sueldo=sueldo2+hora*240;
         retorno=0;
     }
-    if(((eEmpleado*)empleado)->horas>=160&&((eEmpleado*)empleado)->horas<=240)
+    if(hora>=160&& hora<=240)
     {
         hora=hora-160;
         sueldo=sueldo2+sueldo3+hora*350;
@@ -291,7 +291,9 @@ void printEmpleado(eEmpleado* empleado)
     {
         printf("No se pudo leer el empleado\n");
     }
-}void printEmpleadoAll(ArrayList* empleado)
+}
+
+void printEmpleadoAll(ArrayList* empleado)
 {
     int i,tam=empleado->len(empleado);
     eEmpleado* aux;
@@ -305,7 +307,7 @@ void printEmpleado(eEmpleado* empleado)
 int filtrado (void* a)
 {   int retorno=1;
 
-    if(((eEmpleado*)a)->horas>120)
+    if(getHours(a)>120)
     {
         retorno=0;
     }

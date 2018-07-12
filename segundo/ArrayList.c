@@ -651,5 +651,5 @@ ArrayList* filtrar(ArrayList* empleado, int(*pFunc) (void*) )
         empleado=aux;
     }
 
-
+    return aux;
 }

@@ -10,9 +10,15 @@ int main()
     ArrayList* prueba;
     prueba=al_newArrayList();
     int i,j,ok,mapeo;
+    if(parcial!=NULL)
+    {
+        parserEmpleados(parcial);
+    }
+    if(parcial!=NULL)
+    {
+        int tam=parcial->len();
 
-    parserEmpleados(parcial);
-    int tam=parcial->len();
+    }
 
 
     printEmpleadoAll(parcial);
@@ -30,7 +36,11 @@ int main()
     {
         printf("ERROR");
     }
-    prueba=filtrar(parcial,filtrado);
+    if(prueba!=NULL)
+    {
+        prueba=filtrar(parcial,filtrado);
+    }
+
     if(prueba!=NULL)
     {
         parcial=prueba;

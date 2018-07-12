@@ -11,6 +11,16 @@ typedef struct
 int orden(void* ,void* );
 int calcularSalary(void* );
 int filtrado (void* );
+void printEmpleadoAll(ArrayList* );
+void printEmpleado(eEmpleado*);
+int guardarArchivo (ArrayList* , char*);
+int parserEmpleados(ArrayList* );
+int getSalary(eEmpleado*);
+int setSalary(eEmpleado* ,int );
+int getHours(eEmpleado*);
+int setHours(eEmpleado* ,int);
+char* getAdress(eEmpleado* );
+
 
 
 #endif // EMPLEADOS_H_INCLUDED
